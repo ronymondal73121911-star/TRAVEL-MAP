@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Bengal - Sweetest Part of India</title>
+    <style>
+        /* Global Styles */
+        
+
+        body {
+            background-color: #dee2e6;
+            color: #20759c;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background: #e0e9e4;
+            box-shadow: 0 2px 10px rgba(248, 247, 247, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #198754;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0d6efd;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url(' https://images.unsplash.com/photo-1545324367-8997ba3b801e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            height: 75vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: #ffc107;
+            color: #373b40;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e0a800;
+        }
+
+        /* General Section Container */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #191a1c;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6c757d;
+        }
+
+        /* Special Tourist Areas (Grid) */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 150px rgba(152, 14, 14, 0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-16px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #0d6efd;
+        }
+
+        .card-body p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e7f1ff;
+            color: #0d6efd;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Tourist Route Map Section */
+        .routes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .route-box {
+            background: #fff;
+            border-left: 5px solid #198754;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        }
+
+        .route-box h4 {
+            font-size: 1.1rem;
+            color: #198754;
+            margin-bottom: 10px;
+        }
+
+        .route-path {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .route-path span {
+            color: #6c757d;
+        }
+
+        /* Footer */
+        footer {
+            background: #212529;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none; /* Can be expanded with a toggle menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <nev>
+        <div class="navbar">
+            <a href="#" class="logo">Bengal<span>Travels</span></a>
+            <ul class="nav-links">
+                <li><a href="#special-areas">Special Areas</a></li>
+                <li><a href="#route-map">Route Map</a></li>
+                <li><a href="#packages">Tour Circuits</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nev>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Discover West Bengal</h1>
+    
+        <a href="#route-map" class="btn">Explore Route Map</a>
+    </section>
+
+    <!-- Special Areas / Tourist Highlights -->
+    <section class="container" id="special-areas">
+        <div class="section-title">
+            <h2>Special Tourist Destinations</h2>
+            <p>Handpicked gems across nature, wildlife, culture, and beaches</p>
+        </div>
+
+        <div class="destinations-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=80" alt="Darjeeling">
+                <div class="card-body">
+                    <span class="tag">Himalayan Hills</span>
+                    <h3>Darjeeling & Kalimpong</h3>
+                    <p>Famous for lush tea estates, toy trains, and views of Mount Kanchenjunga.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=500&q=80" alt="Sundarbans">
+                <div class="card-body">
+                    <span class="tag">Wildlife & Delta</span>
+                    <h3>Sundarbans Biosphere</h3>
+                    <p>Home of the Royal Bengal Tiger, mangrove creeks, and thrilling boat safaris.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1598890777032-bde835ba27c2?auto=format&fit=crop&w=500&q=80" alt="Kolkata">
+                <div class="card-body">
+                    <span class="tag">Heritage & Culture</span>
+                    <h3>Kolkata & Bishnupur</h3>
+                    <p>The City of Joy, colonial architecture, and famous Terracotta temples of Bishnupur.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=500&q=80" alt="Digha Beach">
+                <div class="card-body">
+                    <span class="tag">Coastal Tourism</span>
+                    <h3>Digha & Mandarmani</h3>
+                    <p>Golden sandy beaches, scenic coastlines, and fresh seafood along the Bay of Bengal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Route Map & Travel Circuits -->
+    <section class="container" id="route-map">
+        <div class="section-title">
+            <h2>West Bengal Travel Route Map</h2>
+            <p>Popular tourist circuits with suggested step-by-step travel paths</p>
+        </div>
+
+        <div class="routes-container">
+            <!-- Route 1 -->
+            <div class="route-box">
+                <h4>Route 1: North Bengal Hill Circuit</h4>
+                <div class="route-path">
+                    Kolkata <span>➔</span> NJP / Bagdogra <span>➔</span> Kurseong <span>➔</span> Darjeeling <span>➔</span> Kalimpong
+                </div>
+                <p><strong>Highlights:</strong> Tiger Hill sunrise, Batasia Loop, Toy Train, tea garden walks.</p>
+            </div>
+
+            <!-- Route 2 -->
+            <div class="route-box">
+                <h4>Route 2: Dooars Wildlife Circuit</h4>
+                <div class="route-path">
+                    Siliguri <span>➔</span> Lataguri <span>➔</span> Gorumara <span>➔</span> Jaldapara <span>➔</span> Buxa
+                </div>
+                <p><strong>Highlights:</strong> One-horned Rhinos, Elephant safari, dense sal forests, river watchtowers.</p>
+            </div>
+
+            <!-- Route 3 -->
+            <div class="route-box">
+                <h4>Route 3: Heritage & Terracotta Circuit</h4>
+                <div class="route-path">
+                    Kolkata <span>➔</span> Shantiniketan <span>➔</span> Bishnupur <span>➔</span> Murshidabad
+                </div>
+                <p><strong>Highlights:</strong> Tagores Ashram, Baluchari sarees, Hazarduari Palace, Terracotta temples.</p>
+            </div>
+
+            <!-- Route 4 -->
+            <div class="route-box">
+                <h4>Route 4: Coastal Beach Circuit</h4>
+                <div class="route-path">
+                    Kolkata / Howrah <span>➔</span> Digha <span>➔</span> Shankarpur <span>➔</span> Mandarmani <span>➔</span> Tajpur
+                </div>
+                <p><strong>Highlights:</strong> Water sports, beach sunset, red crab beaches, peaceful seaside resorts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p> 2026 West Bengal Tourism Experience. All rights reserved.</p>
+        <p>Plan your journey across the hills, wildlife, rivers, and shores of Bengal.</p>
+    </footer>
+
+</body>
+</html>
